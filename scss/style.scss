@@ -12,10 +12,9 @@ sans-serif;
 
 $gray: #888;
 $lightgray: #ccc;
-$black: #000000;
-$WCB: #F0E5D1;
-$WCY: #F5C51D;
-$WCG: #0B4D58;
+$white: #ffffff;
+$WCB: #202025;
+$WCBG: #CCB280;
 
 @mixin kogabook($spacing: 0.025em) {
   font-family: $book;
@@ -42,25 +41,36 @@ $WCG: #0B4D58;
   box-sizing: border-box;
 }
 
+:root {
+  --fz: 1rem;
+  --lh: 1.75;
+  --pitch: calc(var(--fz) * var(--lh));
+
+  @include touch {
+    --fz: 15px;
+  }
+
+  @include fullhd {
+    --fz: 18px;
+  }
+}
+
 html {
   background-color: $WCB;
+  font-size: var(--fz);
+  line-height: var(--pitch);
 }
 
 ::selection {
-  background: $WCY;
-  color: $WCG;
+  background: $WCBG;
+  color: $WCB;
 }
 
 body {
   @include kogabook;
-  font-size: 16px;
-  color: $black;
-  line-height: 1.75;
-
-  @include touch {
-    font-size: 15px;
-    line-height: 1.75;
-  }
+  color: $white;
+  line-height: var(--pitch);
+  font-size: var(--fz);
 }
 
 input[type="range"] {
@@ -68,10 +78,11 @@ input[type="range"] {
   appearance: none;
   cursor: pointer; // カーソルを分かりやすく
   outline: none; // スライダーのアウトラインは目障りになるので消す
-  background: $WCG; // バーの背景色
+  background: $WCBG; // バーの背景色
   height: 4px; // バーの高さ
   width: 100%; // スライダーの幅
   max-width: 200px;
+  margin-right: 10px;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none; // 🚩デフォルトのつまみのスタイルを解除
@@ -79,7 +90,7 @@ input[type="range"] {
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px $WCG solid;
+    border: 4px $WCBG solid;
   }
 
   // -moz-向けのつまみ
@@ -88,7 +99,7 @@ input[type="range"] {
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px $WCG solid;
+    border: 4px $WCBG solid;
   }
 
   // Firefoxで点線が周りに表示されてしまう問題の解消
@@ -101,6 +112,14 @@ input[type="range"] {
   width: auto;
   margin: auto 100px;
   position: relative;
+
+  @include tablet-only {
+    margin: auto 75px;
+  }
+
+  @include mobile {
+    margin: auto 20px;
+  }
 }
 
 .logo {
@@ -108,45 +127,89 @@ input[type="range"] {
   position: fixed;
   text-align: right;
   line-height: 1;
-  top: 93px;
+  top: 90px;
   right: 90px;
   font-size: 60px;
-  color: $black;
+  color: $white;
   z-index: 99;
 
+  @include tablet-only {
+    top: 69px;
+    right: 69px;
+    font-size: 48px;
+  }
+
+  @include mobile {
+    position: fixed;
+    font-size: 36px;
+    top: 20px;
+    right: 20px;
+  }
+
+  @include fullhd {
+    font-size: 80px;
+  }
 }
 
 .enter {
   margin-top: 100px;
+
+  @include tablet-only {
+    margin-top: 75px;
+  }
+
+  @include mobile {
+    margin-top: 150px;
+  }
 }
 
 .profile {
-  padding-top: 196px;
+  padding-top: calc(var(--pitch) * 7);
 
   &__text {
     @include kogabook;
-    color: $black;
+    color: $white;
     font-weight: unset;
+
+    @include mobile {
+      display: block;
+
+      &:first-child {
+        margin-top: calc(var(--pitch) * 0.5);
+      }
+    }
 
     &--name {
       @include kogabold;
-      font-size: 24px;
-      line-height: 28px;
-      min-width: 250px;
-      color: $black;
+      font-size: 1.5rem;
+      line-height: var(--pitch);
+      min-width: calc(var(--pitch) * 10);
+      color: $white;
+
+      @include mobile {
+        display: block;
+      }
     }
 
     &--namejp {
       @include kogabold;
-      font-style: 16px;
-      line-height: 28px;
-      color: $black;
+      font-size: 1rem;
+      line-height: var(--pitch);
+      color: $white;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     a {
-      color: $black;
+      color: $white;
 
       &:hover {
+        text-decoration: underline;
+      }
+
+      @include touch {
         text-decoration: underline;
       }
     }
@@ -154,7 +217,7 @@ input[type="range"] {
 }
 
 .photo {
-  padding-top: 112px;
+  padding-top: calc(var(--pitch) * 4);
 
   &__portrait {
     position: relative;
@@ -165,16 +228,17 @@ input[type="range"] {
       right: 5px;
       bottom: 5px;
       @include kogaelse($weight: 500);
-      font-size: 12px;
+      font-size: 0.75rem;
+      color: $WCB;
     }
   }
 }
 
 .typeface {
-  padding-top: 196px;
+  padding-top: calc(var(--pitch) * 7);
 
   &__type {
-    margin-top: 56px;
+    margin-top: calc(var(--pitch) * 3);
 
     &:first-child {
       margin-top: 0;
@@ -183,20 +247,20 @@ input[type="range"] {
 
   &__date {
     @include kogaelse($weight:500);
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   &__specimen {
-    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1.75em;
     @include kogaelse($weight:500);
 
     a {
-      color: $black;
+      color: $white;
       transition: ease all 0.2s;
 
       &:hover {
-        color: $WCG;
-        background-color: $WCY;
+        background-color: $WCBG;
       }
     }
   }
@@ -211,13 +275,14 @@ input[type="range"] {
     cursor: pointer;
     font-size: 14px;
     max-width: 200px;
+    border-radius: 0;
     @include kogaelse($weight: 500);
     border: none;
-    border-bottom: 1px solid $WCG;
+    border-bottom: 1px solid $WCBG;
     background-color: $WCB;
-    color: $WCG;
+    color: $WCBG;
     position: relative;
-    background-image: linear-gradient(45deg, transparent 50%, $WCG 50%), linear-gradient(135deg, $WCG 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, $WCBG 50%), linear-gradient(135deg, $WCBG 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
     background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
@@ -227,14 +292,130 @@ input[type="range"] {
     }
   }
 
+  &__features {
+    margin-top: 15px;
+
+    input.kern::before {
+      content: "kern"
+    }
+
+    input.dlig::before {
+      content: "dlig"
+    }
+
+    input.onum::before {
+      content: "onum"
+    }
+
+    input.smcp::before {
+      content: "smcp"
+    }
+
+    input.ss01::before {
+      content: "ss01"
+    }
+
+    input.ss02::before {
+      content: "ss02"
+    }
+
+    input.ss03::before {
+      content: "ss03"
+    }
+
+    input.ss04::before {
+      content: "ss04"
+    }
+
+    input.ss05::before {
+      content: "ss05"
+    }
+
+    input.ss06::before {
+      content: "ss06"
+    }
+
+    input.ss07::before {
+      content: "ss07"
+    }
+
+    input.ss08::before {
+      content: "ss08"
+    }
+
+    input.ss09::before {
+      content: "ss09"
+    }
+
+    input.ss10::before {
+      content: "ss10"
+    }
+
+    input.ss11::before {
+      content: "ss11"
+    }
+  }
+
+  &__check {
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
+    width: 50px;
+
+    &::before {
+      @include kogaelse($weight:500);
+      color: $WCBG;
+      border-bottom: 1px solid $WCBG;
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding: 1px 0;
+      margin-right: 4px;
+      transition: ease all 0.2s;
+      text-align: center;
+    }
+
+    &:hover::before {
+      color: $WCBG;
+      background-color: rgba(204, 178, 128, 0.3);
+    }
+
+    &:checked::before {
+      color: $WCB;
+      background-color: $WCBG;
+    }
+
+    &--koga {
+      @extend .typeface__check
+    }
+
+    &--roume {
+      @extend .typeface__check
+    }
+
+    &--biela {
+      @extend .typeface__check
+    }
+
+    &--kogasansmodern {
+      @extend .typeface__check
+    }
+  }
+
   &__big {
     margin-top: -10px;
-    font-size: 72px;
+    font-size: 4.5rem;
     width: 100%;
+    color: $white;
     border: none;
     background-color: $WCB;
     line-height: 1.3;
     font-feature-settings: 'kern';
+    -webkit-appearance: 0;
+    appearance: none;
+    padding: 1px;
 
     &:focus {
       outline: none;
@@ -252,6 +433,10 @@ input[type="range"] {
         serif;
       margin-top: -25px;
       font-variation-settings: 'tkns'100, 'hegh'0, 'stht'1000;
+
+      @include mobile {
+        margin-top: 0;
+      }
     }
 
     &--kogasansmodern {
@@ -278,12 +463,14 @@ input[type="range"] {
   }
 
   &__medium {
-    font-size: 36px;
+    font-size: 2.25rem;
     width: 100%;
+    color: $white;
     border: none;
     background-color: $WCB;
     line-height: 1.3;
     font-feature-settings: 'kern';
+    padding: 1px;
 
     &:focus {
       outline: none;
@@ -327,12 +514,14 @@ input[type="range"] {
 
   &__small {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 1.12rem;
     width: 100%;
+    color: $white;
     border: none;
     background-color: $WCB;
     line-height: 1.3;
     font-feature-settings: 'kern';
+    padding: 1px;
 
     &:focus {
       outline: none;
@@ -373,10 +562,10 @@ input[type="range"] {
   }
 
   &__link {
-    margin-top: 56px;
+    margin-top: calc(var(--pitch) * 2);
 
     a {
-      color: $black;
+      color: $white;
 
       &:hover {
         text-decoration: underline;
@@ -386,11 +575,38 @@ input[type="range"] {
   }
 }
 
+// .iphone{
+//   .typeface__check {
+//     width: 40px;
+//     position: relative;
+
+//     &::before {
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       text-align: center;
+//     }
+//   }
+// }
+// .ipad{
+//   .typeface__check {
+//     width: 40px;
+//     position: relative;
+
+//     &::before {
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       text-align: center;
+//     }
+//   }
+// }
+
 .blog {
-  padding-top: 196px;
+  padding-top: calc(var(--pitch) * 7);
 
   &__article {
-    margin-top: 28px;
+    margin-top: var(--pitch);
 
     &:first-child {
       margin-top: 0;
@@ -403,56 +619,55 @@ input[type="range"] {
   }
 
   &__title {
-    font-size: 24px;
-    line-height: 56px;
+    font-size: 1.5rem;
+    line-height: calc(var(--pitch) * 2);
     @include kogabold;
 
     a {
-      color: $black;
+      color: $white;
       transition: all 0.2s ease;
 
       &:hover {
-        color: $WCG;
-        background-color: $WCY;
+        background-color: $WCBG;
       }
     }
   }
 
   &__date {
     @include kogabook($spacing: 0.05em);
-    font-size: 12px;
-    line-height: 28px;
+    font-size: 0.75rem;
+    line-height: var(--pitch);
   }
 }
 
 .wolphfooter {
-  margin-top: 288px;
-  background-color: $WCG;
-  padding-top: 84px;
-  padding-bottom: 84px;
+  margin-top: calc(var(--pitch) * 10);
+  background-color: $WCBG;
+  padding-top: calc(var(--pitch) * 3);
+  padding-bottom: calc(var(--pitch) * 3);
 
   &__symbol {
-    height: 56px;
+    height: calc(var(--pitch) * 2);
   }
 
   &__links {
     @include kogaelse($weight: 500);
-    margin-top: 56px;
-    color: #FFF;
-    font-size: 21px;
-    line-height: 28px;
+    margin-top: calc(var(--pitch) * 2);
+    color: $WCB;
+    font-size: 1.2rem;
+    line-height: var(--pitch);
 
     a {
-      color: #FFF;
+      color: $WCB;
       transition: 0.2s ease all;
 
       &:hover {
-        color: $WCY;
+        color: $white;
       }
     }
   }
 
   &__underspace {
-    margin-top: 28px;
+    margin-top: var(--pitch);
   }
 }

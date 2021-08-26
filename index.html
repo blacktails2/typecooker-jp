@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wolph</title>
+    <title>WolphType</title>
     <link rel="preload" href="/fonts/KogaSansText-Book.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/KogaSansText-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/KogaSansText-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?qdfWifIcjAc%3D&box=SI-e1RSEBHo%3D&aa=1&ab=1"></script>
     <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/css_browser_selector.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   </head>
   <body>
@@ -58,7 +59,7 @@
           <tbody>
             <tr>
               <th class="profile__text--name">Masaki Ando</th>
-              <th class='profile__text'>Designer: Around Typeface, Typography and Graphic</th>
+              <th class='profile__text'>Designer: Around Typeface and Typography</th>
             </tr>
             <tr>
               <th class="profile__text--namejp">安藤 真生</th>
@@ -178,6 +179,20 @@
                 <option value="koga-sans-semibold">Semi Bold</option>
                 <option value="koga-sans-bold">Bold</option>
               </select>
+              <div class="typeface__features">
+                <input value='kern' class="typeface__check--koga kern" type="checkbox" checked>
+                <input value='onum' class="typeface__check--koga onum" type="checkbox">
+                <input value='smcp' class="typeface__check--koga smcp" type="checkbox">
+                <input value='ss01' class="typeface__check--koga ss01" type="checkbox">
+                <input value='ss02' class="typeface__check--koga ss02" type="checkbox">
+                <input value='ss03' class="typeface__check--koga ss03" type="checkbox">
+                <input value='ss04' class="typeface__check--koga ss04" type="checkbox">
+                <input value='ss05' class="typeface__check--koga ss05" type="checkbox">
+                <input value='ss06' class="typeface__check--koga ss06" type="checkbox">
+                <input value='ss07' class="typeface__check--koga ss07" type="checkbox">
+                <input value='ss08' class="typeface__check--koga ss08" type="checkbox">
+                <input value='ss09' class="typeface__check--koga ss09" type="checkbox">
+              </div>
             </div>
             <div class="column is-8">
               <input class="typeface__big--kogasans" type="text" value="Koga Sans">
@@ -221,6 +236,12 @@
                 <option value="roume-text-bold">Text Bold</option>
                 <option value="roume-text-bold-italic">Text Bold Italic</option>
               </select>
+              <div class="typeface__features">
+                <input value='kern' class="typeface__check--roume kern" type="checkbox" checked>
+                <input value='onum' class="typeface__check--roume onum" type="checkbox">
+                <input value='dlig' class="typeface__check--roume dlig" type="checkbox">
+                <input value='smcp' class="typeface__check--roume smcp" type="checkbox">
+              </div>
             </div>
             <div class="column is-8">
               <input class="typeface__big--roume" type="text" value="Roume">
@@ -237,6 +258,20 @@
               <p class='typeface__specimen'><a href="/img/biela_specimen.pdf">View Specimens↗︎</a></p>
               <p class='typeface__specimen'><a href="https://wolphtype.booth.pm/items/3008887">on Booth↗︎</a></p>
               <input id="biela-style" class="typeface__slider" type="range" name="weight" min="30" max="700" value="400">
+              <div class="typeface__features">
+                <input value='kern' class="typeface__check--biela kern" type="checkbox" checked>
+                <input value='onum' class="typeface__check--biela onum" type="checkbox">
+                <input value='dlig' class="typeface__check--biela dlig" type="checkbox">
+                <input value='ss01' class="typeface__check--biela ss01" type="checkbox">
+                <input value='ss02' class="typeface__check--biela ss02" type="checkbox">
+                <input value='ss03' class="typeface__check--biela ss03" type="checkbox">
+                <input value='ss04' class="typeface__check--biela ss04" type="checkbox">
+                <input value='ss05' class="typeface__check--biela ss05" type="checkbox">
+                <input value='ss06' class="typeface__check--biela ss06" type="checkbox">
+                <input value='ss07' class="typeface__check--biela ss07" type="checkbox">
+                <input value='ss08' class="typeface__check--biela ss08" type="checkbox">
+                <input value='ss09' class="typeface__check--biela ss09" type="checkbox">
+              </div>
             </div>
             <div class="column is-8">
               <input class="typeface__big--biela" type="text" value="Biela">
@@ -253,6 +288,22 @@
               <p class='typeface__specimen'><a href="/img/kogasansmodern_specimen.pdf">View Specimens↗︎</a></p>
               <p class='typeface__specimen'><a href="https://wolphtype.booth.pm/items/2963543">on Booth↗︎</a></p>
               <input id="kogasansmodern-style" class="typeface__slider" type="range" name="weight" min="100" max="900" value="400">
+              <div class="typeface__features">
+                <input value='kern' class="typeface__check--kogasansmodern kern" type="checkbox" checked>
+                <input value='onum' class="typeface__check--kogasansmodern onum" type="checkbox">
+                <input value='dlig' class="typeface__check--kogasansmodern dlig" type="checkbox">
+                <input value='ss01' class="typeface__check--kogasansmodern ss01" type="checkbox">
+                <input value='ss02' class="typeface__check--kogasansmodern ss02" type="checkbox">
+                <input value='ss03' class="typeface__check--kogasansmodern ss03" type="checkbox">
+                <input value='ss04' class="typeface__check--kogasansmodern ss04" type="checkbox">
+                <input value='ss05' class="typeface__check--kogasansmodern ss05" type="checkbox">
+                <input value='ss06' class="typeface__check--kogasansmodern ss06" type="checkbox">
+                <input value='ss07' class="typeface__check--kogasansmodern ss07" type="checkbox">
+                <input value='ss08' class="typeface__check--kogasansmodern ss08" type="checkbox">
+                <input value='ss09' class="typeface__check--kogasansmodern ss09" type="checkbox">
+                <input value='ss10' class="typeface__check--kogasansmodern ss10" type="checkbox">
+                <input value='ss11' class="typeface__check--kogasansmodern ss11" type="checkbox">
+              </div>
             </div>
             <div class="column is-8">
               <input class="typeface__big--kogasansmodern" type="text" value="Koga Sans Modern">
@@ -305,7 +356,7 @@
           <li><a href="https://www.instagram.com/wolphtype/">Instagram</a></li>
           <li><a href="https://m.me/kuro.masaki.ando">Messenger</a></li>
           <li class="wolphfooter__underspace"><a href="#">Back Top↑</a></li>
-          <li class="wolphfooter__underspace">Copyright 2021 Wolph / Masaki Ando</li>
+          <li class="wolphfooter__underspace">Copyright 2021 WolphType / Masaki Ando</li>
         </ul>
       </div>
     </footer>
@@ -321,7 +372,7 @@
       console.log(swowthickness);
       console.log(swowheight);
       console.log(swowstraighter);
-      $('.typeface__big--swow,.typeface__medium--swow,.typeface__small--swow').css('font-variation-settings', `'tkns' ${swowthickness} , 'hegh' ${swowheight} 'stht' ${swowstraighter}` )
+      $('.typeface__big--swow,.typeface__medium--swow,.typeface__small--swow').css('font-variation-settings', `'tkns' ${swowthickness} , 'hegh' ${swowheight}, 'stht' ${swowstraighter}` )
     });
   </script>
   <script>
@@ -346,6 +397,46 @@
     $('#kogasansmodern-style').on('input', function(){
       const kogasansmodernstyle = $(this).val();
       $('.typeface__big--kogasansmodern,.typeface__medium--kogasansmodern,.typeface__small--kogasansmodern').css('font-variation-settings', `'wght'${kogasansmodernstyle}` )
+    });
+  </script>
+  <script>
+    $('.typeface__check--koga').click(function(){
+      var checked = $('.typeface__check--koga:checked').map(function(){
+        return $(this).val();
+      }).get();
+      features = checked.join('\', \'');
+      features = '\'' + features + '\'';
+      $('.typeface__big--kogasans,.typeface__medium--kogasans,.typeface__small--kogasans').css('font-feature-settings', features )
+    });
+  </script>
+  <script>
+    $('.typeface__check--roume').click(function(){
+      var checked = $('.typeface__check--roume:checked').map(function(){
+        return $(this).val();
+      }).get();
+      features = checked.join('\', \'');
+      features = '\'' + features + '\'';
+      $('.typeface__big--roume,.typeface__medium--roume,.typeface__small--roume').css('font-feature-settings', features )
+    });
+  </script>
+  <script>
+    $('.typeface__check--biela').click(function(){
+      var checked = $('.typeface__check--biela:checked').map(function(){
+        return $(this).val();
+      }).get();
+      features = checked.join('\', \'');
+      features = '\'' + features + '\'';
+      $('.typeface__big--biela,.typeface__medium--biela,.typeface__small--biela').css('font-feature-settings', features )
+    });
+  </script>
+  <script>
+    $('.typeface__check--kogasansmodern').click(function(){
+      var checked = $('.typeface__check--kogasansmodern:checked').map(function(){
+        return $(this).val();
+      }).get();
+      features = checked.join('\', \'');
+      features = '\'' + features + '\'';
+      $('.typeface__big--kogasansmodern,.typeface__medium--kogasansmodern,.typeface__small--kogasansmodern').css('font-feature-settings', features )
     });
   </script>
 </html>
