@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ホームページを新しくしました » WolphType</title>
+    <meta
+      name="”description”"
+      content="新しく作ったこのホームページと内製化について。GlyphsとCavalry, 使っていきましょう。"
+    />
+    <meta
+      property="og:url"
+      content="https://wolphtype.com/article/new-temporary-web.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="ホームページを新しくしました  » WolphType"
+    />
+    <meta
+      property="og:description"
+      content="新しく作ったこのホームページと内製化について。GlyphsとCavalry, 使っていきましょう。"
+    />
+    <meta property="og:site_name" content="WolphType" />
+    <meta
+      property="og:image"
+      content="https://wolphtype.com/img/ogp/ogp-newweb.jpg"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wolphtype" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ccb280" />
+    <meta name="msapplication-TileColor" content="#202025" />
+    <meta name="theme-color" content="#202025" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?qdfWifIcjAc%3D&box=SI-e1RSEBHo%3D&aa=1&ab=1&chws=1"></script>
+    <script src="/js/smooth-scroll.min.js"></script>
+    <script src="/js/css_browser_selector.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RJKMNXG0QG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RJKMNXG0QG");
+    </script>
+  </head>
+  <body>
+    <a href="/index.html">
+      <h2 class="logo">Wolph<br />Type</h2>
+    </a>
+    <section class="article">
+      <div class="wolphcon">
+        <p>
+          <a href="/index.html#blog" class="article__backhome">«Back to Home</a>
+        </p>
+        <h1 class="article__title">ホームページを新しくしました</h1>
+        <h5 class="article__date">29th August 2021</h5>
+        <div class="columns">
+          <div class="column is-10 is-8-fullhd is-6-2000">
+            <p class="article__body">
+              こんにちは、Wolphtypeです。この度、ホームページを新しく作りました。というのも、前のホームページの<a
+                href="https://wolph.design"
+                >wolph.design</a
+              >を作ってもう3年も経ってしまい、そろそろ新しくしようと考えていたからです。前のホームページはHTMLと、フレームワークにBulmaを使いつつSassで書いていたのですが、更新のモチベをうまく保つことができませんでした。なので、新しいホームページはCMSとか使ってなるべく楽に更新ができるようにしよう！と考え、今年の2月頃にNext.jsを勉強し、作り始めてはいたのですが、Koga
+              Sansが思ったよりもデザインに合わず、ホームページにKoga Sans
+              Modernを作り始めたらそれにハマってしまい、見本帳まで作り出し…という次第で、一向に完成しないまま半年が経ってしまいました。
+            </p>
+            <p class="article__body">
+              デザインセンターでデザイナーとして働かせていただき、ありがたいことにWorksを出す機会があったりフォロワーさんも多少増え、「今のプロフィールが大学4年のままになっているwolph.designのままではちょっとまずいぞ」と感じながら8月。夏休みも最終日になり、どうせなら一日とかで簡単に作っちゃうか！と一念発起し作り始めたのが今回のサイトです。結局一週間かかってしまいましたが。
+            </p>
+            <h3 class="article__headline">
+              タイプテスターとモーショングラフィックス
+            </h3>
+            <p class="article__body">
+              前のホームページの気になっていた点として、Worksの領域が広すぎる、というものがありました。自分は書体デザイナーを目指して日々勉強していきたいと考えているし、書体だけ載せればいいのではないか？と考えた結果、今回のホームページではタイプテスターと簡単なモーショングラフィックスのみ、という構成にしています。説明文すらなし。文章を書くことは簡単に思えて大変で難しく、時間がかかります。幸い、書体ごとに見本帳を作っていたので見本帳を見てもらえれば大体わかるだろうと考えたのも理由です（この点については過去の自分に感謝！）。とはいえ、タイプテスターの実装が簡単だったかというとそういうわけでもなく、2月頃にProgateでJavaScriptを学習した記憶を呼び起こし、なんとかVariable
+              FontとOpenType
+              Featuresの対応をさせました。これに関しては他のところでも使えると思うので、CodePenなどで使いやすい形に纏めて公開するのもいいかもしれませんね。あと、頑張ってVariable
+              Fontと複数ウェイトの書体の表示をjQueryで書いた後「やったぜ」という意味で適当に動画をツイートしたら何故か伸びてびっくりしました。新しいホームページのいいスタートと捉えています。
+            </p>
+            <blockquote class="twitter-tweet">
+              <p lang="ja" dir="ltr">
+                やるじゃん
+                <a href="https://t.co/4cvuMFiIWK">pic.twitter.com/4cvuMFiIWK</a>
+              </p>
+              &mdash; Masaki Ando (@wolphtype)
+              <a
+                href="https://twitter.com/wolphtype/status/1430151001315581952?ref_src=twsrc%5Etfw"
+                >August 24, 2021</a
+              >
+            </blockquote>
+            <p class="article__body">
+              モーショングラフィックスも同じく大変でした。一番上、トップのモーションに関しては最初から作ろうと考えていたのですが、タイプテスター下の課題で作った書体、実験書体のモーションは制作中に思いついたものです。「仕事を除いても課題とかで様々な書体を作ってきたけれど、文字がちゃんと揃ってるわけでもないし、ちょっとした画像でも作って載せておくか」と最初は思っていたのですが、何故か「どうせならモーションも作っちゃえばいいじゃん！」と考え始めてしまいました。簡単なものでも画面の中に動きがあると楽しいので、結果的には満足しています。
+            </p>
+            <h3 class="article__headline">デザイン</h3>
+            <p class="article__body">
+              書体だけを載せることにした、と先ほど述べましたが、今回はWolph名義ではなくWolphType名義のホームページとなっています。Wolphはデザイン全般、WolphTypeは書体デザインのみ、という線引きとともに、デザインやカラースキームに関しても自分の中で分けているのでその部分を今回は反映してみました。なお、書体それぞれに関してもデザインの感じ、動きの感じ、カラースキームは毎回考えています。
+            </p>
+            <p class="article__body">
+              Wolphのデザインはアイボリーベースに深い青緑をメインカラーとし、黄色をアクセントとしたセンタードの伝統的なレイアウトを採用していますが、WolphTypeのレイアウトはラギッドを基調としたモダンでプリミティブな構成。色に関してもダークグレーを基調に白とベージュで締める、と差別化しています。これは、<strong>自分自身の好みの変化でもあり、オンスクリーン制作室を経て受けた影響も色濃く反映されている</strong>と思います。特に今回のレイアウトに関しては、文章をラギッドにして左に固める、タイポグラフィの観点は<a
+                href="https://terkel.jp"
+                target="_blank"
+                >Terkelさんのウェブ</a
+              >を、横幅を広く使うレイアウトはオンスクリーン制作室の先輩である<a
+                href="https://badbadnotgood.design/"
+                >志村さんのウェブ</a
+              >やその周辺のものを、プロフィールの構成やフォントのサイズ感は<a
+                href="https://takumiabe.com/"
+                >阿部さんのウェブ</a
+              >に強く影響を受けていました（ちょっと似過ぎかもしれないので、そこは反省です）。
+            </p>
+            <p class="article__body">
+              そして、もう一つのこだわりポイントとして<strong>「ロゴタイプがsvgではない」</strong>ことがあります。どういうことかというと、今回右上に鎮座しているWolphTypeロゴは、単純にh1もしくはh2タグでタイプして、lette-spacingをちょっと追加しただけの文字列だということです。前から「ファウンダリとしてのサイトを作るならば、ロゴは作ったフォントを適当に並べて、なんなら毎回変わるとかでもいいんじゃないか？」と考えており、それを実践した形です。打っただけでいい感じになる。それだけの調整をしているという自負も込めての実践です（もちろん細かく直したくなったりはしますし、本文用サイドベアリングの設定とロゴでの使用はまた変わってくるので、本来なら調整すべきかもしれませんが）。
+            </p>
+            <h3 class="article__headline">
+              内製化の広がりと質の向上、そして歓び
+            </h3>
+            <p class="article__body">
+              ここ1年僕が意識していることとして、「なるべく内製化しよう」というものがあります。世の中にはツールまでを作ってしまう人もいて、流石に自分はそこまで作る技術力はありません。しかし、素材の一つ一つを自分で作りあげ、それらを纏めてウェブサイトや動画、印刷物を作り上げていく。デザイナーとしてこれほどの喜びはありません。何故なら、<strong>デザイナーは「周りのものをなんでもオリジナルにしたい」という初期衝動を持っている</strong>からだと（少なくとも自分は）考えているからです。
+            </p>
+            <div class="article__youtube">
+              <iframe
+                width="1920"
+                height="1080"
+                src="https://www.youtube.com/embed/SmHcwfP0h1g"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <p class="article__body">
+              それらは、6月に購入した富士フイルムのミラーレス一眼 “X-E4”
+              を購入したことで最近始めたVlog<a
+                href="https://youtube.com/playlist?list=PLDIgNXDO9DREwBYC3jV4ZSodEF50Sjyq9"
+                >“X-E4 Wolphtype”</a
+              >にも表れています。モーションを自分で作り、そのための文字も自分で作り、動画は自分で撮影し、録音し、編集するという工程です。今回のホームページでは、欧文書体をKoga
+              Sans
+              Modernにし、タイプテスターも自分で書き、モーションも自分で作る、というチャレンジを行いました。同様に写真もX-E4を使ってよりこだわりを持って撮影し、質を向上させることを実践しています。
+            </p>
+            <p class="article__body">
+              内製化する部分を増やすことはこだわれる場所が増え、自分の技術の研鑽と成果の見せ場になりますが、同時に制作にかかる時間の増加にもつながります。特に自分のホームページとなると、いくらでも後回しにできてしまうためになかなか完成させることは難しいでしょう。今回のホームページは自分が作ってきた中で7,
+              8個目くらいのものですが、今までの経験で「一気に作り切ってしまう」ことが何よりの解決策だという学びから、なんとか作り切ることができました（7,
+              8個の中で完成まで作りきったのはおそらく3,
+              4つくらいなので、そういうことです）。
+            </p>
+            <h3 class="article__headline">ツール</h3>
+            <p class="article__body">
+              今回ホームページを作るにあたり、CSSフレームワークに<a
+                href="https://bulma.io/"
+                >Bulma</a
+              >を使い、エディターは<a
+                href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/"
+                >VSCode</a
+              >を用いています。VSCodeは今はこれが主流だということで去年Sublime
+              Text3から移行したのですが、今のところあまり恩恵は感じていないというか、Microsoftが作っているという先入観からかあまり馴染んでいません…書体デザインにはもちろん<a
+                href="https://glyphsapp.com/"
+                >Glyphs</a
+              >、モーショングラフィックは<a
+                href="https://cavalry.scenegroup.co/"
+                >Cavalry</a
+              >を使っています。Cavalryは勉強会のおかげもあり、今回のようにライトに作るには最適なアプリケーションでした。Glyphsももちろんいつもおすすめしていますし、ぜひ使ってみてください。
+            </p>
+            <p class="article__body">
+              本来ならばNext.jsのようなフロントエンドフレームワークを使いたいところですが、今回はライトに作るためにCSSフレームワークです。次はNext.jsで作りたいですが、いつになることやら…また数年後とかになりかねませんが、その時はまたご覧いただけたら幸いです。
+            </p>
+            <p class="article__body">
+              終わりになりますが、今後もこのホームページ主にBlogの方を更新していきたいと思います。デザインに対する自分のスタンスや意見に関することからハマっているゲームや趣味、イベントのレポートなども書いて行けたら良いですね。書体の方もアップデートや新しい書体があれば追加していくつもりです。そして、僕のホームページや記事によってGlyphsユーザー（Cavalryユーザーも）が一人でも増えてくれたら嬉しいです。<br />それでは、最後にこのホームページの紹介動画とともに筆を置かせていただきます。今後もWolphTypeと安藤真生をよろしくお願いいたします。
+            </p>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-11 is-9-fullhd">
+            <video
+              muted
+              autoplay
+              playsinline
+              loop
+              class="article__video"
+              src="/img/article-images/202108_website.mp4"
+            ></video>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-10 is-8-fullhd is-6-2000">
+            <p class="article__share">
+              Share:
+              <a
+                class="article__tweet"
+                href="https://twitter.com/intent/tweet?text=ホームページを新しくしました » WolphType&url=wolphtype.com/article/new-temporary-web.html"
+                >Twitter</a
+              >
+            </p>
+            <!-- <div class="article__border"></div>
+            <h3 class="article__headline--blog" id="kyoto-2days-depart">
+              タイトル
+            </h3>
+            <h5 class="article__date">16th February 2019</h5>
+            <p class="article__body">
+              テキスト
+            </p>
+            <p class="article__share">
+              Share:
+              <a
+                class="article__tweet"
+                href="https://twitter.com/intent/tweet?text=興奮冷めやまぬ、京都旅行2日間を綴る〜出発編〜 » WolphType&url=wolphtype.com/article/%23kyoto-2days-depart"
+                target="_blank"
+                >Twitter</a
+              >
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="wolphfooter">
+      <div class="wolphcon">
+        <img
+          class="wolphfooter__symbol"
+          src="/img/wolph_symbol.svg"
+          alt="Wolphシンボルマーク"
+        />
+        <div class="columns">
+          <div class="column is-4">
+            <ul class="wolphfooter__links">
+              <li>
+                <a href="https://twitter.com/wolphtype">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/wolphtype/">Instagram</a>
+              </li>
+              <li>
+                <a href="https://m.me/kuro.masaki.ando">Messenger</a>
+              </li>
+              <li class="wolphfooter__underspace">
+                <a href="#">Back Top↑</a>
+              </li>
+              <li class="wolphfooter__underspace">
+                Copyright 2021 WolphType / Masaki Ando
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <ul class="wolphfooter__links">
+              <li>WolphType » wolphtype.com</li>
+              <li>
+                Typeface: Koga Sans Modern (WolphType), Tazugane Gothic
+                (Monotype)
+              </li>
+              <li>CSS Framework: Bulma</li>
+              <li class="wolphfooter__underspace">
+                Design & Develop: Masaki Ando
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+</html>

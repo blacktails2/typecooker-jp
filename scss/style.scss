@@ -65,7 +65,12 @@ html {
   background: $WCBG;
   color: $WCB;
 }
-
+.is-6-2000{
+  @media screen and (min-width: 2000px){
+    width: 50%;
+    flex: none;
+  }
+}
 body {
   @include kogabook;
   color: $white;
@@ -132,7 +137,10 @@ input[type="range"] {
   font-size: 60px;
   color: $white;
   z-index: 99;
-
+  transition: ease all 0.2s;
+  &:hover{
+    color: $WCBG;
+  }
   @include tablet-only {
     top: 69px;
     right: 69px;
@@ -160,6 +168,10 @@ input[type="range"] {
 
   @include mobile {
     margin-top: 150px;
+  }
+
+  &__video {
+    width: 100%;
   }
 }
 
@@ -219,6 +231,10 @@ input[type="range"] {
 .photo {
   padding-top: calc(var(--pitch) * 4);
 
+  @include mobile {
+    padding-top: calc(var(--pitch) * 2);
+  }
+
   &__portrait {
     position: relative;
 
@@ -235,6 +251,13 @@ input[type="range"] {
 }
 
 .typeface {
+  .no-padding {
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
   padding-top: calc(var(--pitch) * 7);
 
   &__type {
@@ -561,6 +584,10 @@ input[type="range"] {
     }
   }
 
+  &__other {
+    margin-top: calc(var(--pitch) * 3);
+  }
+
   &__link {
     margin-top: calc(var(--pitch) * 2);
 
@@ -572,6 +599,25 @@ input[type="range"] {
       }
     }
 
+  }
+}
+
+.video {
+
+  &__movie {
+    margin-top: calc(var(--pitch) * 2);
+
+    &:first-child {
+      margin-top: 0;
+
+      @include mobile {
+        margin-top: calc(var(--pitch) * 2);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 0.75rem;
   }
 }
 
@@ -669,5 +715,162 @@ input[type="range"] {
 
   &__underspace {
     margin-top: var(--pitch);
+  }
+}
+
+.article {
+  margin-top: 100px;
+
+  @include tablet-only {
+    margin-top: 75px;
+  }
+
+  @include mobile {
+    margin-top: 15px;
+  }
+
+  &__backhome {
+    color: $white;
+    text-decoration: underline;
+    transition: all ease 0.2s;
+
+    &:hover {
+      color: $white;
+      background-color: $WCBG;
+    }
+  }
+
+  &__title {
+    margin-top: calc(var(--pitch) * 6);
+    @include kogabold($spacing: 0.1rem);
+    font-size: 3rem;
+    color: $WCBG;
+
+    @include mobile {
+      margin-top: calc(var(--pitch) * 4);
+      font-size: 2.5rem;
+      line-height: calc(var(--pitch) * 2);
+    }
+
+    &+.article__date {
+      margin-top: calc(var(--pitch) * 1);
+      margin-bottom: calc(var(--pitch) * 2);
+    }
+  }
+
+  &__headline {
+    padding-top: calc(var(--pitch) * 2);
+    @include kogabold($spacing: 0.1rem);
+    font-size: 1.5rem;
+    color: $WCBG;
+
+    &--blog {
+      @extend .article__headline;
+      padding-top: calc(var(--pitch) * 4);
+
+      @include mobile {
+        padding-top: calc(var(--pitch) * 3);
+      }
+    }
+  }
+
+  &__date {
+    @include kogaelse($weight: 500);
+    font-size: 0.75rem;
+    font-feature-settings: "palt", "ss01", "ss08", "onum";
+  }
+
+  &__body {
+    @include kogabook($spacing: 0);
+    margin-top: calc(var(--pitch) * 1);
+    text-align: justify;
+    font-feature-settings: "chws"1, "ss01", "ss08";
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      transition: ease all 0.2s;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+
+      &:hover {
+        color: $WCBG;
+      }
+    }
+
+    strong {
+      font-weight: normal;
+      @include kogabold;
+      color: $white;
+    }
+  }
+
+  &__subhead {
+    @include kogabold($spacing: 0.1rem);
+    color: $WCBG;
+    margin-top: calc(var(--pitch) * 1);
+    font-size: 1.25rem;
+    transform: translateY(-0.25rem);
+
+    &+.article__body {
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    margin-top: calc(var(--pitch) * 1);
+  }
+  &__video{
+    margin-top: calc(var(--pitch) * 1);
+    width: 100%;
+  }
+  &__youtube {
+    margin-top: var(--pitch);
+    position: relative;
+    padding-bottom: 52.9%;
+    /*アスペクト比 17:9の場合の縦幅*/
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .twitter-tweet {
+    margin-top: calc(var(--pitch) * 1) !important;
+  }
+
+  &__share {
+    margin-top: calc(var(--pitch) * 1);
+  }
+
+  &__tweet {
+    margin-left: 0.5rem;
+    color: $WCBG;
+    border-bottom: 1px solid $WCBG;
+    transition: ease 0.2s all;
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      background-color: $WCBG;
+      color: $WCB;
+    }
+  }
+
+  &__border {
+    margin-top: calc(var(--pitch) * 4);
+    width: 30%;
+    margin-left: -3%;
+    height: 1px;
+    background-color: $WCBG;
+
+    @include mobile {
+      margin-top: calc(var(--pitch) * 3);
+    }
   }
 }
