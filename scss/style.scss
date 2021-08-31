@@ -10,11 +10,13 @@ $bold: "Koga Sans Modern",
 "TazuganeGothicStdN-Bold",
 sans-serif;
 
-$gray: #888;
-$lightgray: #ccc;
-$white: #ffffff;
-$WCB: #202025;
-$WCBG: #CCB280;
+// $gray: #888;
+// $lightgray: #ccc;
+// $white: #ffffff;
+// $WCGR: #202025;
+// $WCBG: #CCB280;
+// $WCBGD: #BC9E65;
+
 
 @mixin kogabook($spacing: 0.025em) {
   font-family: $book;
@@ -41,10 +43,14 @@ $WCBG: #CCB280;
   box-sizing: border-box;
 }
 
+
 :root {
   --fz: 1rem;
   --lh: 1.75;
   --pitch: calc(var(--fz) * var(--lh));
+  --textColor: #ffffff;
+  --backgroundColor: #202025;
+  --accentColor: #CCB280;
 
   @include touch {
     --fz: 15px;
@@ -55,15 +61,31 @@ $WCBG: #CCB280;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :root{
+    --textColor: #202025;
+    --backgroundColor: #fcfcfc;
+    --accentColor: #BC9E65;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root{
+    --textColor: #ffffff;
+    --backgroundColor: #202025;
+    --accentColor: #CCB280;
+  }
+
+  }
 html {
-  background-color: $WCB;
+  background-color: var(--backgroundColor);
   font-size: var(--fz);
   line-height: var(--pitch);
+  transition: 0.2s ease;
 }
 
 ::selection {
-  background: $WCBG;
-  color: $WCB;
+  background: var(--accentColor);
+  color: var(--backgroundColor);
 }
 
 .is-6-2000 {
@@ -75,7 +97,7 @@ html {
 
 body {
   @include kogabook;
-  color: $white;
+  color: var(--textColor);
   line-height: var(--pitch);
   font-size: var(--fz);
 }
@@ -85,7 +107,7 @@ input[type="range"] {
   appearance: none;
   cursor: pointer; // カーソルを分かりやすく
   outline: none; // スライダーのアウトラインは目障りになるので消す
-  background: $WCBG; // バーの背景色
+  background: var(--accentColor); // バーの背景色
   height: 4px; // バーの高さ
   width: 100%; // スライダーの幅
   max-width: 200px;
@@ -93,20 +115,20 @@ input[type="range"] {
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none; // 🚩デフォルトのつまみのスタイルを解除
-    background: $WCB; // 背景色
+    background: var(--backgroundColor); // 背景色
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px $WCBG solid;
+    border: 4px var(--accentColor) solid;
   }
 
   // -moz-向けのつまみ
   &::-moz-range-thumb {
-    background: $WCB; // 背景色
+    background: var(--backgroundColor); // 背景色
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px $WCBG solid;
+    border: 4px var(--accentColor) solid;
   }
 
   // Firefoxで点線が周りに表示されてしまう問題の解消
@@ -137,12 +159,12 @@ input[type="range"] {
   top: 90px;
   right: 90px;
   font-size: 60px;
-  color: $white;
+  color: var(--textColor);
   z-index: 99;
   transition: ease all 0.2s;
 
   &:hover {
-    color: $WCBG;
+    color: var(--accentColor);
   }
 
   @include tablet-only {
@@ -184,7 +206,7 @@ input[type="range"] {
 
   &__text {
     @include kogabook;
-    color: $white;
+    color: var(--textColor);
     font-weight: unset;
 
     @include mobile {
@@ -200,7 +222,7 @@ input[type="range"] {
       font-size: 1.5rem;
       line-height: var(--pitch);
       min-width: calc(var(--pitch) * 10);
-      color: $white;
+      color: var(--textColor);
 
       @include mobile {
         display: block;
@@ -211,7 +233,7 @@ input[type="range"] {
       @include kogabold;
       font-size: 1rem;
       line-height: var(--pitch);
-      color: $white;
+      color: var(--textColor);
 
       @include mobile {
         display: none;
@@ -219,7 +241,7 @@ input[type="range"] {
     }
 
     a {
-      color: $white;
+      color: var(--textColor);
 
       &:hover {
         text-decoration: underline;
@@ -249,7 +271,7 @@ input[type="range"] {
       bottom: 5px;
       @include kogaelse($weight: 500);
       font-size: 0.75rem;
-      color: $WCB;
+      color: var(--backgroundColor);
     }
   }
 }
@@ -283,11 +305,11 @@ input[type="range"] {
     @include kogaelse($weight:500);
 
     a {
-      color: $white;
+      color: var(--textColor);
       transition: ease all 0.2s;
 
       &:hover {
-        background-color: $WCBG;
+        background-color: var(--accentColor);
       }
     }
   }
@@ -305,11 +327,11 @@ input[type="range"] {
     border-radius: 0;
     @include kogaelse($weight: 500);
     border: none;
-    border-bottom: 1px solid $WCBG;
-    background-color: $WCB;
-    color: $WCBG;
+    border-bottom: 1px solid var(--accentColor);
+    background-color: var(--backgroundColor);
+    color: var(--accentColor);
     position: relative;
-    background-image: linear-gradient(45deg, transparent 50%, $WCBG 50%), linear-gradient(135deg, $WCBG 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, var(--accentColor) 50%), linear-gradient(135deg, var(--accentColor) 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
     background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
@@ -393,8 +415,8 @@ input[type="range"] {
 
     &::before {
       @include kogaelse($weight:500);
-      color: $WCBG;
-      border-bottom: 1px solid $WCBG;
+      color: var(--accentColor);
+      border-bottom: 1px solid var(--accentColor);
       position: absolute;
       right: 0;
       left: 0;
@@ -405,13 +427,13 @@ input[type="range"] {
     }
 
     &:hover::before {
-      color: $WCBG;
+      color: var(--accentColor);
       background-color: rgba(204, 178, 128, 0.3);
     }
 
     &:checked::before {
-      color: $WCB;
-      background-color: $WCBG;
+      color: var(--backgroundColor);
+      background-color: var(--accentColor);
     }
 
     &--koga {
@@ -435,9 +457,9 @@ input[type="range"] {
     margin-top: -10px;
     font-size: 4.5rem;
     width: 100%;
-    color: $white;
+    color: var(--textColor);
     border: none;
-    background-color: $WCB;
+    background-color: var(--backgroundColor);
     line-height: 1.3;
     font-feature-settings: 'kern';
     -webkit-appearance: 0;
@@ -492,9 +514,9 @@ input[type="range"] {
   &__medium {
     font-size: 2.25rem;
     width: 100%;
-    color: $white;
+    color: var(--textColor);
     border: none;
-    background-color: $WCB;
+    background-color: var(--backgroundColor);
     line-height: 1.3;
     font-feature-settings: 'kern';
     padding: 1px;
@@ -543,9 +565,9 @@ input[type="range"] {
     margin-top: 15px;
     font-size: 1.12rem;
     width: 100%;
-    color: $white;
+    color: var(--textColor);
     border: none;
-    background-color: $WCB;
+    background-color: var(--backgroundColor);
     line-height: 1.3;
     font-feature-settings: 'kern';
     padding: 1px;
@@ -596,7 +618,7 @@ input[type="range"] {
     margin-top: calc(var(--pitch) * 2);
 
     a {
-      color: $white;
+      color: var(--textColor);
 
       &:hover {
         text-decoration: underline;
@@ -674,11 +696,11 @@ input[type="range"] {
     @include kogabold;
 
     a {
-      color: $white;
+      color: var(--textColor);
       transition: all 0.2s ease;
 
       &:hover {
-        background-color: $WCBG;
+        background-color: var(--accentColor);
       }
     }
   }
@@ -692,7 +714,7 @@ input[type="range"] {
 
 .wolphfooter {
   margin-top: calc(var(--pitch) * 10);
-  background-color: $WCBG;
+  background-color: var(--accentColor);
   padding-top: calc(var(--pitch) * 3);
   padding-bottom: calc(var(--pitch) * 3);
 
@@ -703,16 +725,16 @@ input[type="range"] {
   &__links {
     @include kogaelse($weight: 500);
     margin-top: calc(var(--pitch) * 2);
-    color: $WCB;
+    color: var(--backgroundColor);
     font-size: 1.2rem;
     line-height: var(--pitch);
 
     a {
-      color: $WCB;
+      color: var(--backgroundColor);
       transition: 0.2s ease all;
 
       &:hover {
-        color: $white;
+        color: var(--textColor);
       }
     }
   }
@@ -734,13 +756,13 @@ input[type="range"] {
   }
 
   &__backhome {
-    color: $white;
+    color: var(--textColor);
     text-decoration: underline;
     transition: all ease 0.2s;
 
     &:hover {
-      color: $white;
-      background-color: $WCBG;
+      color: var(--textColor);
+      background-color: var(--accentColor);
     }
   }
 
@@ -748,7 +770,7 @@ input[type="range"] {
     margin-top: calc(var(--pitch) * 6);
     @include kogabold($spacing: 0.1rem);
     font-size: 3rem;
-    color: $WCBG;
+    color: var(--accentColor);
 
     @include mobile {
       margin-top: calc(var(--pitch) * 4);
@@ -766,7 +788,7 @@ input[type="range"] {
     padding-top: calc(var(--pitch) * 2);
     @include kogabold($spacing: 0.1rem);
     font-size: 1.5rem;
-    color: $WCBG;
+    color: var(--accentColor);
 
     &--blog {
       @extend .article__headline;
@@ -791,27 +813,27 @@ input[type="range"] {
     font-feature-settings: "chws"1, "ss01", "ss08";
 
     a {
-      color: $white;
+      color: var(--textColor);
       text-decoration: underline;
       transition: ease all 0.2s;
       padding-left: 0.25rem;
       padding-right: 0.25rem;
 
       &:hover {
-        color: $WCBG;
+        color: var(--accentColor);
       }
     }
 
     strong {
       font-weight: normal;
       @include kogabold;
-      color: $white;
+      color: var(--textColor);
     }
   }
 
   &__subhead {
     @include kogabold($spacing: 0.1rem);
-    color: $WCBG;
+    color: var(--accentColor);
     margin-top: calc(var(--pitch) * 1);
     font-size: 1.25rem;
     transform: translateY(-0.25rem);
@@ -865,14 +887,14 @@ input[type="range"] {
 
   &__tweet {
     margin-left: 0.5rem;
-    color: $WCBG;
-    border-bottom: 1px solid $WCBG;
+    color: var(--accentColor);
+    border-bottom: 1px solid var(--accentColor);
     transition: ease 0.2s all;
     padding: 0.25rem 0.5rem;
 
     &:hover {
-      background-color: $WCBG;
-      color: $WCB;
+      background-color: var(--accentColor);
+      color: var(--backgroundColor);
     }
   }
 
@@ -881,7 +903,7 @@ input[type="range"] {
     width: 30%;
     margin-left: -3%;
     height: 1px;
-    background-color: $WCBG;
+    background-color: var(--accentColor);
 
     @include mobile {
       margin-top: calc(var(--pitch) * 3);
