@@ -51,6 +51,9 @@ sans-serif;
   --textColor: #ffffff;
   --backgroundColor: #202025;
   --accentColor: #CCB280;
+  --textColorLight: #202025;
+  --backgroundColorLight: #fcfcfc;
+  --accentColorLight: #BC9E65;
 
   @include touch {
     --fz: 15px;
@@ -61,21 +64,21 @@ sans-serif;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root{
-    --textColor: #202025;
-    --backgroundColor: #fcfcfc;
-    --accentColor: #BC9E65;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root{
-    --textColor: #ffffff;
-    --backgroundColor: #202025;
-    --accentColor: #CCB280;
-  }
+// @media (prefers-color-scheme: light) {
+//   :root{
+//     --textColor: #202025;
+//     --backgroundColor: #fcfcfc;
+//     --accentColor: #BC9E65;
+//   }
+// }
+// @media (prefers-color-scheme: dark) {
+//   :root{
+//     --textColor: #ffffff;
+//     --backgroundColor: #202025;
+//     --accentColor: #CCB280;
+//   }
 
-  }
+//   }
 html {
   background-color: var(--backgroundColor);
   font-size: var(--fz);
@@ -108,27 +111,27 @@ input[type="range"] {
   cursor: pointer; // カーソルを分かりやすく
   outline: none; // スライダーのアウトラインは目障りになるので消す
   background: var(--accentColor); // バーの背景色
-  height: 4px; // バーの高さ
+  height: 2px; // バーの高さ
   width: 100%; // スライダーの幅
   max-width: 200px;
   margin-right: 10px;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none; // 🚩デフォルトのつまみのスタイルを解除
-    background: var(--backgroundColor); // 背景色
+    background-color: var(--backgroundColor); // 背景色
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px var(--accentColor) solid;
+    border: 2px var(--accentColor) solid;
   }
 
   // -moz-向けのつまみ
   &::-moz-range-thumb {
-    background: var(--backgroundColor); // 背景色
+    background-color: var(--backgroundColor); // 背景色
     width: 20px; // 幅
     height: 20px; // 高さ
     border-radius: 50%; // 円形に
-    border: 4px var(--accentColor) solid;
+    border: 2px var(--accentColor) solid;
   }
 
   // Firefoxで点線が周りに表示されてしまう問題の解消
@@ -165,6 +168,7 @@ input[type="range"] {
 
   &:hover {
     color: var(--accentColor);
+    @include kogaelse($weight: 900, $spacing: 0);
   }
 
   @include tablet-only {
@@ -185,15 +189,116 @@ input[type="range"] {
   }
 }
 
-.enter {
-  margin-top: 100px;
+.theme {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 99;
+  height: 35px;
+  width: 82px;
+  transition: 0.2s ease all;
+  background-color: var(--backgroundColor);
+  border-bottom: var(--accentColor) 1px solid;
+  cursor: pointer;
+  user-select: none;
 
   @include tablet-only {
-    margin-top: 75px;
+    right: 75px;
+    bottom: 75px;
   }
 
   @include mobile {
-    margin-top: 150px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  &:hover {
+    background-color: #524C43;
+
+    .theme__checkbox:checked~.theme__darktheme {
+      @include kogaelse($weight: 900);
+      font-feature-settings: 'dlig';
+    }
+
+    .theme__checkbox:not(:checked)~.theme__lighttheme {
+      @include kogaelse($weight: 900);
+      font-feature-settings: 'dlig';
+    }
+  }
+
+  &__checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      background-color: var(--accentColor);
+      z-index: 0;
+      transition: 0.2s ease all;
+
+    }
+
+    &:checked {
+      &:before {
+        left: 50%;
+      }
+
+      ~.theme__lighttheme {
+        color: var(--backgroundColor);
+      }
+
+      ~.theme__darktheme {
+        color: var(--accentColor);
+      }
+    }
+  }
+
+  &__darktheme {
+    @include kogaelse($weight: 500);
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    font-feature-settings: 'dlig';
+    font-size: 32px;
+    z-index: 99;
+    color: var(--backgroundColor);
+    transition: 0.2s ease all;
+  }
+
+  &__lighttheme {
+    @include kogaelse($weight: 500);
+    color: var(--accentColor);
+    position: absolute;
+    top: 3px;
+    right: 8px;
+    font-feature-settings: 'dlig';
+    font-size: 32px;
+    z-index: 99;
+    transition: 0.2s ease all;
+  }
+}
+
+.enter {
+  padding-top: 100px;
+
+  @include tablet-only {
+    padding-top: 75px;
+  }
+
+  @include mobile {
+    padding-top: 150px;
   }
 
   &__video {
@@ -295,14 +400,14 @@ input[type="range"] {
   }
 
   &__date {
-    @include kogaelse($weight:500);
+    @include kogaelse($weight: 500);
     font-size: 0.75rem;
   }
 
   &__specimen {
     font-size: 0.75rem;
     line-height: 1.75em;
-    @include kogaelse($weight:500);
+    @include kogaelse($weight: 500);
 
     a {
       color: var(--textColor);
@@ -342,7 +447,7 @@ input[type="range"] {
   }
 
   &__features {
-    margin-top: 15px;
+    margin-top: 0px;
 
     input.kern::before {
       content: "kern"
@@ -414,7 +519,7 @@ input[type="range"] {
     width: 50px;
 
     &::before {
-      @include kogaelse($weight:500);
+      @include kogaelse($weight: 500);
       color: var(--accentColor);
       border-bottom: 1px solid var(--accentColor);
       position: absolute;
@@ -678,7 +783,7 @@ input[type="range"] {
   padding-top: calc(var(--pitch) * 7);
 
   &__article {
-    margin-top: var(--pitch);
+    margin-top: calc(var(--pitch) * 1.5);
 
     &:first-child {
       margin-top: 0;
@@ -692,7 +797,7 @@ input[type="range"] {
 
   &__title {
     font-size: 1.5rem;
-    line-height: calc(var(--pitch) * 2);
+    line-height: calc(var(--pitch) * 1);
     @include kogabold;
 
     a {
@@ -709,6 +814,7 @@ input[type="range"] {
     @include kogabook($spacing: 0.05em);
     font-size: 0.75rem;
     line-height: var(--pitch);
+    margin-top: calc(var(--pitch) * 0.5;
   }
 }
 
@@ -735,6 +841,7 @@ input[type="range"] {
 
       &:hover {
         color: var(--textColor);
+        @include kogaelse($weight: 700);
       }
     }
   }
@@ -745,7 +852,7 @@ input[type="range"] {
 }
 
 .article {
-  margin-top: 100px;
+  padding-top: 100px;
 
   @include tablet-only {
     margin-top: 75px;
@@ -907,6 +1014,253 @@ input[type="range"] {
 
     @include mobile {
       margin-top: calc(var(--pitch) * 3);
+    }
+  }
+}
+
+.js-lighttheme {
+  background-color: var(--backgroundColorLight);
+  color: var(--textColorLight);
+
+  &::selection {
+    background: var(--accentColorLight);
+    counter-reset: var(--backgroundColorLight);
+  }
+
+  input[type="range"] {
+    background-color: var(--accentColorLight);
+
+    &::-webkit-slider-thumb {
+      background-color: var(--backgroundColorLight); // 背景色
+      border: 2px var(--accentColorLight) solid;
+    }
+
+    // -moz-向けのつまみ
+    &::-moz-range-thumb {
+      background-color: var(--backgroundColorLight); // 背景色
+      border: 2px var(--accentColorLight) solid;
+    }
+
+  }
+
+  .logo {
+    color: var(--textColorLight);
+
+    &:hover {
+      color: var(--accentColorLight);
+    }
+  }
+
+  .theme {
+    background-color: var(--backgroundColorLight);
+    border-bottom: var(--accentColorLight) 1px solid;
+
+    &:hover {
+      background-color: #E7E0D1;
+    }
+
+    &__checkbox {
+
+      &:before {
+        background-color: var(--accentColorLight);
+
+      }
+
+      &:checked {
+        &:before {}
+
+        ~.theme__lighttheme {
+          color: var(--backgroundColorLight);
+        }
+
+        ~.theme__darktheme {
+          color: var(--accentColorLight);
+        }
+      }
+    }
+
+    &__darktheme {
+      color: var(--backgroundColorLight);
+    }
+
+    &__lighttheme {
+      color: var(--accentColorLight);
+    }
+  }
+
+  .profile {
+    &__text {
+      color: var(--textColorLight);
+
+      &--name {
+        color: var(--textColorLight);
+      }
+
+      &--namejp {
+        color: var(--textColorLight);
+
+      }
+
+      a {
+        color: var(--textColorLight);
+
+      }
+    }
+  }
+
+  .typeface {
+
+
+    &__specimen {
+
+      a {
+        color: var(--textColorLight);
+
+      }
+    }
+
+    &__select {
+      border-bottom: 1px solid var(--accentColorLight);
+      background-color: var(--backgroundColorLight);
+      color: var(--accentColorLight);
+      background-image: linear-gradient(45deg, transparent 50%, var(--accentColorLight) 50%), linear-gradient(135deg, var(--accentColorLight) 50%, transparent 50%);
+
+    }
+
+
+    &__check {
+
+      &::before {
+        color: var(--accentColorLight);
+        border-bottom: 1px solid var(--accentColorLight);
+      }
+
+      &:hover::before {
+        color: var(--accentColorLight);
+        background-color: rgba(188, 158, 101, 0.3);
+      }
+
+      &:checked::before {
+        color: var(--backgroundColorLight);
+        background-color: var(--accentColorLight);
+      }
+
+    }
+
+    &__big {
+      color: var(--textColorLight);
+      background-color: var(--backgroundColorLight);
+    }
+
+    &__medium {
+      color: var(--textColorLight);
+      background-color: var(--backgroundColorLight);
+
+
+    }
+
+    &__small {
+      color: var(--textColorLight);
+      background-color: var(--backgroundColorLight);
+    }
+
+
+    &__link {
+
+      a {
+        color: var(--textColorLight);
+
+      }
+
+    }
+  }
+
+  .blog {
+
+    &__title {
+
+      a {
+        color: var(--textColorLight);
+
+        &:hover {
+          background-color: var(--accentColorLight);
+        }
+      }
+    }
+
+  }
+
+  .wolphfooter {
+    background-color: var(--accentColorLight);
+
+    &__links {
+      color: var(--backgroundColorLight);
+
+      a {
+        color: var(--backgroundColorLight);
+
+        &:hover {
+          color: var(--textColorLight);
+        }
+      }
+    }
+
+  }
+
+  .article {
+
+    &__backhome {
+      color: var(--textColorLight);
+
+      &:hover {
+        color: var(--textColorLight);
+        background-color: var(--accentColorLight);
+      }
+    }
+
+    &__title {
+      color: var(--accentColorLight);
+
+    }
+
+    &__headline {
+      color: var(--accentColorLight);
+
+    }
+
+    &__body {
+
+      a {
+        color: var(--textColorLight);
+
+        &:hover {
+          color: var(--accentColorLight);
+        }
+      }
+
+      strong {
+        color: var(--textColorLight);
+      }
+    }
+
+    &__subhead {
+      color: var(--accentColorLight);
+    }
+
+
+    &__tweet {
+      color: var(--accentColorLight);
+      border-bottom: 1px solid var(--accentColorLight);
+
+      &:hover {
+        background-color: var(--accentColorLight);
+        color: var(--backgroundColorLight);
+      }
+    }
+
+    &__border {
+      background-color: var(--accentColorLight);
+
     }
   }
 }
