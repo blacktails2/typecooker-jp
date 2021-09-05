@@ -1,6 +1,7 @@
 // 1. Import the initial variables
-@import "bulma.min";
 @import "../node_modules/bulma/sass/utilities/_all";
+@import "../node_modules/bulma/sass/grid/columns";
+@import "../node_modules/bulma/sass/base/_all";
 @import "fontface";
 
 $book: "Koga Sans Modern",
@@ -447,7 +448,7 @@ input[type="range"] {
   }
 
   &__features {
-    margin-top: 0px;
+    margin-top: 10px;
 
     input.kern::before {
       content: "kern"
@@ -855,11 +856,11 @@ input[type="range"] {
   padding-top: 100px;
 
   @include tablet-only {
-    margin-top: 75px;
+    padding-top: 75px;
   }
 
   @include mobile {
-    margin-top: 15px;
+    padding-top: 15px;
   }
 
   &__backhome {
