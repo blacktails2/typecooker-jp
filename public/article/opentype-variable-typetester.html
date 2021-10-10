@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenType & Variable Type Tester » WolphType</title>
+  <meta name="description" content="OpenType機能とVariable Font, 通常のウェイト選択もできるタイプテスターを作りました。" />
+  <meta property="og:url" content="https://wolphtype.com/article/oepntype-variable-typetester.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="OpenType & Variable Type Tester  » WolphType" />
+  <meta property="og:description" content="OpenType機能とVariable Font, 通常のウェイト選択もできるタイプテスターを作りました。" />
+  <meta property="og:site_name" content="WolphType" />
+  <meta property="og:image" content="https://wolphtype.com/img/ogp/ogp-typetester.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@wolphtype" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ccb280" />
+  <meta name="msapplication-TileColor" content="#202025" />
+  <meta name="theme-color" content="#202025" />
+  <link rel="stylesheet" href="/css/style.css?090513" />
+  <script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?qdfWifIcjAc%3D&box=SI-e1RSEBHo%3D&aa=1&ab=1&chws=1"></script>
+  <script src="/js/smooth-scroll.min.js"></script>
+  <script src="/js/lozad.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJKMNXG0QG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-RJKMNXG0QG");
+    </script>
+</head>
+
+<body>
+  <a href="/index.html">
+    <h2 class="logo">Wolph<br />Type</h2>
+  </a>
+  <label class="theme" for="theme__change">
+    <input type="checkbox" class="theme__checkbox" id="theme__change">
+    <span class="theme__darktheme">darktheme</span>
+    <span class="theme__lighttheme">lighttheme</span>
+  </label>
+  <section class="article">
+    <div class="wolphcon">
+      <p>
+        <a href="/index.html#blog" class="article__backhome">«Back to Home</a>
+      </p>
+      <h1 class="article__title">OpenType & Variable Type Tester</h1>
+      <h5 class="article__date">9th October 2021</h5>
+      <div class="columns">
+        <div class="column is-10 is-8-fullhd is-6-2000">
+          <p class="article__body">
+            こんにちは、Wolphtypeです。いつの間にか9月が終わっていました。そして10月ももう1/3が過ぎようとしています。恐ろしい。さて、大学の課題で書体を作っていたときは、展示などで何かと見せる機会があり、その度に何となくタイプテスターを実装していました。しかし、今回ホームページを作るにあたって、もう少し使いまわせるような、使いやすいテスターを作りたいと考え、今回 1. OpenType機能が使えること 2. バリアブルフォントが扱えること 3. 既存のスタイル選択もできること を目標にタイプテスターを作りました。結果、まあまあ今後も使えそうなものができたので、同じようにタイプテスターを使いたい人もいるかもしれませんし、CodePenで公開してみようと思います。なお、JavaScriptでも簡単にできるかと思いますが、気分でjQueryで書いてしまいました。仕組みは単純なので書き換えていただければと思います。
+          </p>
+          <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="BaZeJJK" data-user="blacktails2" style="margin-top: 24px; height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/blacktails2/pen/BaZeJJK">
+                OpenType &amp; Variable Type Tester</a> by Masaki Ando (<a href="https://codepen.io/blacktails2">@blacktails2</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+          <h3 class="article__headline">
+            注意点
+          </h3>
+          <p class="article__body">
+            カスタマイズがしやすいように、デザインは簡素なものになっています。バリエーションは3種類に分かれており、1つ目は「<code>font-weight</code>と<code>font-style</code>でスタイル指定をするもの」、2つ目は「<code>font-family</code>でスタイル指定をするもの」、3つ目は「バリアブルフォントでスタイルを変更するもの」です。<br>
+            自分は本来こちらの方が正しいと思いつつも<code>font-weight</code>でウェイトを変更するのはあまり好まないのですが（というのも、設定によってはブラウザが太らせた文字が表示されることがあるため）、Google FontsやWebフォントサービスではこの形式で配信されていることもあり、<code>font-weight</code>と<code>font-style</code>バージョンは新しく書きました。
+          </p>
+          <p class="article__body">
+            また、バリアブルフォントでは問題ないですが、ドロップダウンでスタイルを選択する場合、選択直後にフォールバックフォントが一瞬表示されて画面がチラチラする場合があります。その時は、<code>&lt;link rel="preload" href="path" as="font" type="font/woff2" crossorigin /&gt;</code>かJavaScriptを使ってプリロードを行うことで解消できます。
+          </p>
+          <h3 class="article__headline">使い方</h3>
+          <p class="article__body">
+            基本的には<code>typeface</code>クラスを持っている<code>div</code>の<code>id</code>を変更すれば使用できますが、OpenType機能を追加したい、バリアブルフォントに別軸を追加したいなどがあると思うので、簡単にカスタマイズ方法を説明します。
+          </p>
+          <h4 class="article__subhead">
+            基本
+          </h4>
+          <p class="article__body">
+            1書体のテスターは全体を<code>div</code>で囲い、<code>id='koga'</code>のように書体名などで<code>id</code>をつけておき、それをJavaScriptのセレクタにも適用します。CSSでは<code>id</code>単位で<code>font-family</code>を指定していますが、UI部分のフォントは変えなくていい、という場合は<code>&lt;textarea&gt;</code>（もしくは<code>&lt;input&gt;</code>）部分のみに書体を適用しておくと良いでしょう。
+          </p>
+          <h4 class="article__subhead">
+            OpenType機能
+          </h4>
+          <p class="article__body">
+            OpenType機能を増やしたり減らしたりするのは簡単で、<code>checkbox</code>を減らしたり増やしたりすればいいだけです。その際、<code>value</code>は使用したいOpenType機能の<code>font-feature-settings</code>で用いるプロパティを入力してください。プロパティは<a href="https://helpx.adobe.com/jp/fonts/using/open-type-syntax.html">こちら</a>から確認できます。<code>value</code>さえ正しければ適用されるので、スタイリングは自由に行って問題ないでしょう。また、<code>kern</code>や<code>liga</code>といったデフォルトで適用されるべきOpenType機能は<code>checked</code>にしておくと良いでしょう。<code>.typeface__check</code>クラスを持っている<code>input</code>を全部拾うので、特にJavaScriptを変更する必要はありません。
+          </p>
+          <h4 class="article__subhead">
+            ドロップダウンでスタイルを選択する
+          </h4>
+          <p class="article__body">
+            この場合は簡単で、<code>&lt;select&gt;</code>内の<code>&lt;option&gt;</code>を変更します。<code>font-weight</code>および<code>font-style</code>で指定する場合は、一般的なウェイトとイタリックだけが書体にあるならば<code>value='400-normal'</code>のようにウェイトとスタイルをハイフンで繋ぎます（ハイフンで分割され、それぞれが<code>font-weight</code>と<code>font-style</code>に入るようになっています）。ExpandやCondensedの書体を使いたい場合はおそらくこの方法では指定できないので、<code>font-family</code>を用いて指定することになります。
+          </p>
+          <p class="article__body">
+            <code>font-family</code>でスタイルを指定する場合は、<code>value='koga-sans-book'</code>のようにフォント名を指定します。この際、CSSで<code>@font-face</code>をする際にハイフンなどでフォント名にスペースを含めないようにすると良いでしょう。<code>font-weight</code>方式、<code>font-family</code>形式どちらにしても、最初に指定したスタイルの<code>option</code>を<code>selected</code>にしておくことをお勧めします。
+          </p>
+          <h4 class="article__subhead">
+            バリアブルフォントでスタイルを指定する
+          </h4>
+          <p class="article__body">
+            この方法だと少しカスタマイズが必要になってきます。ウェイトの指定だけならば今のままでも問題はありませんが、複数軸となると多少追加する必要があります。まず、それぞれの軸を調整するスライダーは<code>id='koga-weight'</code>のように固有の<code>id</code>をつけると良いでしょう。<code>min='100' max='900' value='400'</code>のようにその軸の最小値、最大値、デフォルトの値も指定しておきます（それぞれの値はAdobe Illustratorなどで確認できます）。JavaScript部分では、<code>const weight = $(#koga-weight).val();</code>のようにしてそれぞれの値を定数に入れ、<code>$('#koga textarea').css('font-variation-settings', `'wght' ${weight}, 'ital' ${italic}`)</code>のようにそれぞれCSSに適用されるようにします。（4文字のタグは<a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg">こちら</a>で見られますが、フォントによっては独自のタグを規定している場合もあります。）
+          </p>
+          <p class="article__body">
+            だいたいこんなところでしょう。こういった記事を書くのはあまり慣れていないので読みづらいところもあったかもしれませんが、もし何かわからないことなどがあれば<a href="https://twitter.com/wolphtype/">Twitter</a>などで気軽に訊いていただけたらと思います。それでは、良いVariable FontとOpenTypeライフを！
+          </p>
+          <p class="article__share">
+            Share:
+            <a class="article__tweet" href="https://twitter.com/intent/tweet?text=OpenType &amp; Variable Type Tester » WolphType&url=wolphtype.com/article/oepntype-variable-typetester.html">Twitter</a>
+          </p>
+          <!-- <div class="article__border"></div>
+            <h3 class="article__headline--blog" id="kyoto-2days-depart">
+              タイトル
+            </h3>
+            <h5 class="article__date">16th February 2019</h5>
+            <p class="article__body">
+              テキスト
+            </p>
+            <p class="article__share">
+              Share:
+              <a
+                class="article__tweet"
+                href="https://twitter.com/intent/tweet?text=興奮冷めやまぬ、京都旅行2日間を綴る〜出発編〜 » WolphType&url=wolphtype.com/article/%23kyoto-2days-depart"
+                target="_blank"
+                >Twitter</a
+              >
+            </p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="wolphfooter">
+    <div class="wolphcon">
+      <img class="wolphfooter__symbol" src="/img/wolph_symbol.svg" alt="Wolphシンボルマーク" />
+      <div class="columns">
+        <div class="column is-4">
+          <ul class="wolphfooter__links">
+            <li>
+              <a href="https://twitter.com/wolphtype">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/wolphtype/">Instagram</a>
+            </li>
+            <li>
+              <a href="https://m.me/kuro.masaki.ando">Messenger</a>
+            </li>
+            <li class="wolphfooter__underspace">
+              <a href="#">Back Top↑</a>
+            </li>
+            <li class="wolphfooter__underspace">
+              Copyright 2021 WolphType / Masaki Ando
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul class="wolphfooter__links">
+            <li>WolphType » wolphtype.com</li>
+            <li>
+              Typeface: Koga Sans Modern (WolphType), Tazugane Gothic
+              (Monotype)
+            </li>
+            <li>CSS Framework: Bulma</li>
+            <li class="wolphfooter__underspace">
+              Design & Develop: Masaki Ando
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const observer = lozad('.lozad', { // オリジナルのclassを指定したい場合
+    rootMargin: '10px', // cssの記述と同じで、これは読み込み位置を上下左右10px手前にしている
+    threshold: [0.1, 0.2, 0.3] // 読み込みタイミング1つだけでなく、10%、20%と表示領域が変わった場合にもコールバックを発生させるためのオプション
+  });
+  observer.observe();
+  </script>
+</body>
+<script>
+var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+<script>
+const checkToggle = document.getElementById('theme__change');
+const classLight = 'js-lighttheme';
+
+// デバイスがライトモードかどうかチェック
+
+// ローカルストレージに保存するための適当なKey名
+const keyLocalStorage = 'wolph-theme-mode';
+
+// ローカルストレージの情報を取得
+const localTheme = localStorage.getItem(keyLocalStorage);
+
+// 絵文字を回転させる角度
+
+// ローカルストレージの中身と、端末がライトモードかどうか（ie,edgeには無意味）をチェック
+if (localTheme === 'light') {
+  // ローカルストレージの情報が優先
+  changeMode('light');
+} else if (localTheme === 'dark') {
+  changeMode('dark');
+}
+
+// チェックボックスでの切り替え、選択をローカルストレージに保存
+// モード切替スイッチが変更されたら発動
+checkToggle.addEventListener('change', function(e) {
+  // 絵文字大回転
+
+  // チェックされたらライトモード、されなければダークモードにし、ローカルストレージにどちらを選んだか保存する
+  if (e.target.checked) {
+    changeMode('light');
+    localStorage.setItem(keyLocalStorage, 'light');
+  } else {
+    changeMode('dark');
+    localStorage.setItem(keyLocalStorage, 'dark');
+  }
+});
+
+/**
+ * テーマ切り替え
+ * @param {String} mode 'light' もしくは 'dark'
+ */
+function changeMode(mode) {
+  // 引数にしたがってbodyにクラスをつける
+  // チェックボックス経由で変更かかったときはいいんだけど、ローカルストレージとかからモードを変えた場合にチェック状態がおかしくなるので、合わせておく
+  if (mode === 'light') {
+    document.body.classList.add(classLight);
+    checkToggle.checked = true;
+  } else if (mode === 'dark') {
+    document.body.classList.remove(classLight);
+    checkToggle.checked = false;
+  }
+}
+
+/**
+ * 月と太陽アイコン無限回転
+ * 呼ばれるたびに180度角度が追加されていく
+ */
+</script>
+
+</html>

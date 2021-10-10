@@ -2098,139 +2098,143 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 
 @font-face {
   font-family: "Koga Sans Modern";
-  src: url("/fonts/KogaSansModernVF.woff2") format("woff2"); }
+  src: url("/font/KogaSansModernVF.woff2") format("woff2"); }
 
 @font-face {
   font-family: "RC Swow Serif";
-  src: url("/fonts/RCSwowSerifGX.ttf"); }
+  src: url("/font/RCSwowSerifGX.ttf"); }
 
 @font-face {
   font-family: "Biela";
-  src: url("/fonts/Biela-Regular.woff2") format("woff2"); }
+  src: url("/font/Biela-Regular.woff2") format("woff2"); }
 
 @font-face {
   font-family: "koga-sans-book";
-  src: url("/fonts/KogaSansText-Book.woff2") format("woff2"); }
+  src: url("/font/KogaSansText-Book.woff2") format("woff2"); }
 
 @font-face {
   font-family: "koga-sans-medium";
-  src: url("/fonts/KogaSansText-Medium.woff2") format("woff2"); }
+  src: url("/font/KogaSansText-Medium.woff2") format("woff2"); }
 
 @font-face {
   font-family: "koga-sans-semiBold";
-  src: url("/fonts/KogaSansText-SemiBold.woff2") format("woff2"); }
+  src: url("/font/KogaSansText-SemiBold.woff2") format("woff2"); }
 
 @font-face {
   font-family: "koga-sans-bold";
-  src: url("/fonts/KogaSansText-Bold.woff2") format("woff2"); }
+  src: url("/font/KogaSansText-Bold.woff2") format("woff2"); }
 
 @font-face {
   font-family: "Narukami";
-  src: url("/fonts/Narukami-Regular.woff2") format("woff2"); }
+  src: url("/font/Narukami-Regular.woff2") format("woff2"); }
 
 @font-face {
   font-family: "roume-text-book";
-  src: url("../fonts/Roume-TextBook.woff2"); }
+  src: url("/font/Roume-TextBook.woff2"); }
 
 @font-face {
   font-family: "roume-text-book-italic";
-  src: url("../fonts/Roume-TextBookItalic.woff2"); }
+  src: url("/font/Roume-TextBookItalic.woff2"); }
 
 @font-face {
   font-family: "roume-text-regular";
-  src: url("../fonts/Roume-TextRegular.woff2"); }
+  src: url("/font/Roume-TextRegular.woff2"); }
 
 @font-face {
   font-family: "roume-text-regular-italic";
-  src: url("../fonts/Roume-TextRegularItalic.woff2"); }
+  src: url("/font/Roume-TextRegularItalic.woff2"); }
 
 @font-face {
   font-family: "roume-text-medium";
-  src: url("../fonts/Roume-TextMedium.woff2"); }
+  src: url("/font/Roume-TextMedium.woff2"); }
 
 @font-face {
   font-family: "roume-text-medium-italic";
-  src: url("../fonts/Roume-TextMediumItalic.woff2"); }
+  src: url("/font/Roume-TextMediumItalic.woff2"); }
 
 @font-face {
   font-family: "roume-text-bold";
-  src: url("../fonts/Roume-TextBold.woff2"); }
+  src: url("/font/Roume-TextBold.woff2"); }
 
 @font-face {
   font-family: "roume-text-bold-italic";
-  src: url("../fonts/Roume-TextBoldItalic.woff2"); }
+  src: url("/font/Roume-TextBoldItalic.woff2"); }
 
 @font-face {
   font-family: "roume-fine-light";
-  src: url("../fonts/Roume-FineLight.woff2"); }
+  src: url("/font/Roume-FineLight.woff2"); }
 
 @font-face {
   font-family: "roume-fine-light-italic";
-  src: url("../fonts/Roume-FineLightItalic.woff2"); }
+  src: url("/font/Roume-FineLightItalic.woff2"); }
 
 @font-face {
   font-family: "roume-fine-book";
-  src: url("../fonts/Roume-FineBook.woff2"); }
+  src: url("/font/Roume-FineBook.woff2"); }
 
 @font-face {
   font-family: "roume-fine-book-italic";
-  src: url("../fonts/Roume-FineBookItalic.woff2"); }
+  src: url("/font/Roume-FineBookItalic.woff2"); }
 
 @font-face {
   font-family: "roume-fine-regular";
-  src: url("../fonts/Roume-FineRegular.woff2"); }
+  src: url("/font/Roume-FineRegular.woff2"); }
 
 @font-face {
   font-family: "roume-fine-regular-italic";
-  src: url("../fonts/Roume-FineRegularItalic.woff2"); }
+  src: url("/font/Roume-FineRegularItalic.woff2"); }
 
 @font-face {
   font-family: "roume-fine-medium";
-  src: url("../fonts/Roume-FineMedium.woff2"); }
+  src: url("/font/Roume-FineMedium.woff2"); }
 
 @font-face {
   font-family: "roume-fine-medium-italic";
-  src: url("../fonts/Roume-FineMediumItalic.woff2"); }
+  src: url("/font/Roume-FineMediumItalic.woff2"); }
 
 @font-face {
   font-family: "roume-fine-bold";
-  src: url("../fonts/Roume-FineBold.woff2"); }
+  src: url("/font/Roume-FineBold.woff2"); }
 
 @font-face {
   font-family: "roume-fine-bold-italic";
-  src: url("../fonts/Roume-FineBoldItalic.woff2"); }
+  src: url("/font/Roume-FineBoldItalic.woff2"); }
 
 @font-face {
   font-family: "roume-display-light";
-  src: url("../fonts/Roume-DisplayLight.woff2"); }
+  src: url("/font/Roume-DisplayLight.woff2"); }
 
 @font-face {
   font-family: "roume-display-light-italic";
-  src: url("../fonts/Roume-DisplayLightItalic.woff2"); }
+  src: url("/font/Roume-DisplayLightItalic.woff2"); }
 
 @font-face {
   font-family: "roume-display-regular";
-  src: url("../fonts/Roume-DisplayRegular.woff2"); }
+  src: url("/font/Roume-DisplayRegular.woff2"); }
 
 @font-face {
   font-family: "roume-display-regular-italic";
-  src: url("../fonts/Roume-DisplayRegularItalic.woff2"); }
+  src: url("/font/Roume-DisplayRegularItalic.woff2"); }
 
 @font-face {
   font-family: "roume-display-medium";
-  src: url("../fonts/Roume-DisplayMedium.woff2"); }
+  src: url("/font/Roume-DisplayMedium.woff2"); }
 
 @font-face {
   font-family: "roume-display-medium-italic";
-  src: url("../fonts/Roume-DisplayMediumItalic.woff2"); }
+  src: url("/font/Roume-DisplayMediumItalic.woff2"); }
 
 @font-face {
   font-family: "roume-display-bold";
-  src: url("../fonts/Roume-DisplayBold.woff2"); }
+  src: url("/font/Roume-DisplayBold.woff2"); }
 
 @font-face {
   font-family: "roume-display-bold-italic";
-  src: url("../fonts/Roume-DisplayBoldItalic.woff2"); }
+  src: url("/font/Roume-DisplayBoldItalic.woff2"); }
+
+@font-face {
+  font-family: "Arnord Italic";
+  src: url("/font/Arnold_v0.3-Italic.woff2"); }
 
 * {
   box-sizing: border-box; }
@@ -2324,6 +2328,7 @@ input[type="range"] {
   top: 90px;
   right: 90px;
   font-size: 60px;
+  padding-bottom: 20px;
   color: var(--textColor);
   z-index: 99;
   transition: ease all 0.2s; }
@@ -2789,6 +2794,10 @@ input[type="range"] {
   @media screen and (max-width: 768px) {
     .article {
       padding-top: 15px; } }
+  .article iframe {
+    margin-top: calc(var(--pitch) * 1); }
+    .article iframe, .article iframe cp_embed_iframe {
+      height: 500px; }
   .article__backhome {
     color: var(--textColor);
     text-decoration: underline;
@@ -2855,6 +2864,13 @@ input[type="range"] {
       font-feature-settings: "palt", "ss01", "ss08";
       letter-spacing: 0.025em;
       color: var(--textColor); }
+    .article__body code {
+      color: var(--textColor);
+      background-color: rgba(204, 178, 128, 0.3);
+      padding: 0.2em 0.4em;
+      border-radius: 5px;
+      margin: 0 0.2em;
+      font-family: "Arnord Italic"; }
   .article__subhead {
     font-family: "Koga Sans Modern", "TazuganeGothicStdN-Bold", sans-serif;
     font-variation-settings: "wght" 600;
@@ -3008,6 +3024,9 @@ input[type="range"] {
       color: var(--accentColorLight); }
   .js-lighttheme .article__body strong {
     color: var(--textColorLight); }
+  .js-lighttheme .article__body code {
+    color: var(--textColorLight);
+    background-color: rgba(204, 178, 128, 0.3); }
   .js-lighttheme .article__subhead {
     color: var(--accentColorLight); }
   .js-lighttheme .article__tweet {

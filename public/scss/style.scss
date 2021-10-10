@@ -1,7 +1,7 @@
 // 1. Import the initial variables
-@import "../node_modules/bulma/sass/utilities/_all";
-@import "../node_modules/bulma/sass/grid/columns";
-@import "../node_modules/bulma/sass/base/_all";
+@import "../../node_modules/bulma/sass/utilities/_all";
+@import "../../node_modules/bulma/sass/grid/columns";
+@import "../../node_modules/bulma/sass/base/_all";
 @import "fontface";
 
 $book: "Koga Sans Modern",
@@ -163,6 +163,7 @@ input[type="range"] {
   top: 90px;
   right: 90px;
   font-size: 60px;
+  padding-bottom: 20px;
   color: var(--textColor);
   z-index: 99;
   transition: ease all 0.2s;
@@ -863,6 +864,14 @@ input[type="range"] {
     padding-top: 15px;
   }
 
+  iframe {
+    margin-top: calc(var(--pitch) * 1);
+
+    &, cp_embed_iframe {
+      height: 500px;
+    }
+  }
+
   &__backhome {
     color: var(--textColor);
     text-decoration: underline;
@@ -936,6 +945,15 @@ input[type="range"] {
       font-weight: normal;
       @include kogabold;
       color: var(--textColor);
+    }
+
+    code {
+      color: var(--textColor);
+      background-color: rgba(204, 178, 128, 0.3);
+      padding: 0.2em 0.4em;
+      border-radius: 5px;
+      margin: 0 0.2em;
+      font-family: 'Arnord Italic', ;
     }
   }
 
@@ -1226,7 +1244,6 @@ input[type="range"] {
 
     &__headline {
       color: var(--accentColorLight);
-
     }
 
     &__body {
@@ -1241,6 +1258,11 @@ input[type="range"] {
 
       strong {
         color: var(--textColorLight);
+      }
+
+      code {
+        color: var(--textColorLight);
+        background-color: rgba(204, 178, 128, 0.3);
       }
     }
 

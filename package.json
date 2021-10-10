@@ -16,6 +16,6 @@
   "scripts": {
     "watch": "npm-run-all --parallel watch:*",
     "watch:sass": "node-sass -w public/scss/style.scss public/css/style.css",
-    "watch:sync": "browser-sync start -ws --index public/index.html -f public/css/*.css"
+    "watch:sync": "browser-sync start -ws --index public/index.html -f public/css/*.css --ss public"
   }
 }
