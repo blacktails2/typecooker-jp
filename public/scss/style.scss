@@ -51,7 +51,7 @@ sans-serif;
   --lh: 1.75;
   --pitch: calc(var(--fz) * var(--lh));
   --textColor: #ffffff;
-  --backgroundColor: #202025;
+  --backgroundColor: #EAFDE6;
   --accentColor: #CCB280;
   --textColorLight: #202025;
   --backgroundColorLight: #fcfcfc;
@@ -90,8 +90,8 @@ html {
 }
 
 ::selection {
-  background: var(--accentColor);
-  color: var(--backgroundColor);
+  background: #1B676B;
+  color: white;
 }
 
 .is-6-2000 {

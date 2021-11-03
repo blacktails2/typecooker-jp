@@ -2273,14 +2273,52 @@ a.has-text-danger:hover, a.has-text-danger:focus {
     #typecooker .challenge__list {
       color: #1B676B;
       font-size: 3.5em;
-      margin-bottom: -1px; }
+      margin-bottom: -1px;
+      line-height: 1.6; }
       #typecooker .challenge__list--head {
         background-color: #519548;
         color: white;
         height: 100%;
-        padding: 0.5em 0.25em;
+        padding: 0 0.25em;
         margin-right: 0.25em;
         display: inline-block; }
+
+.about {
+  font-size: 3.5em;
+  line-height: 1.6; }
+  .about__caution {
+    font-size: 0.5em;
+    padding: 0 0.5em;
+    color: #1B676B;
+    background-color: #EAFDE6; }
+  .about__headline {
+    padding: 0 0.25em;
+    background-color: #1B676B; }
+  .about__list {
+    font-size: 0.5em;
+    padding: 0 0.5em;
+    background-color: white;
+    color: #88C425; }
+    .about__list a {
+      color: #88C425;
+      text-decoration: underline;
+      transition: all ease 0.2s; }
+      .about__list a:hover {
+        color: #1B676B; }
+  .about__text {
+    font-size: 0.5em;
+    padding: 0 0.5em 3em;
+    background-color: #EAFDE6;
+    color: #1B676B; }
+    @media screen and (min-width: 1408px) {
+      .about__text {
+        width: 70%; } }
+    .about__text a {
+      color: inherit;
+      text-decoration: underline;
+      transition: 0.2s ease all; }
+      .about__text a:hover {
+        color: #88C425; }
 
 * {
   box-sizing: border-box; }
@@ -2290,7 +2328,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   --lh: 1.75;
   --pitch: calc(var(--fz) * var(--lh));
   --textColor: #ffffff;
-  --backgroundColor: #202025;
+  --backgroundColor: #EAFDE6;
   --accentColor: #CCB280;
   --textColorLight: #202025;
   --backgroundColorLight: #fcfcfc;
@@ -2310,8 +2348,8 @@ html {
   height: 100%; }
 
 ::selection {
-  background: var(--accentColor);
-  color: var(--backgroundColor); }
+  background: #1B676B;
+  color: white; }
 
 @media screen and (min-width: 2000px) {
   .is-6-2000 {

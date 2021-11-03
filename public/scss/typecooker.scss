@@ -54,14 +54,70 @@
       color: #1B676B;
       font-size: 3.5em;
       margin-bottom: -1px;
+      line-height: 1.6;
 
       &--head {
         background-color: #519548;
         color: white;
         height: 100%;
-        padding: 0.5em 0.25em;
+        padding: 0 0.25em;
         margin-right: 0.25em;
         display: inline-block;
+      }
+    }
+  }
+}
+
+.about {
+  font-size: 3.5em;
+  line-height: 1.6;
+
+  &__caution {
+    font-size: 0.5em;
+    padding: 0 0.5em;
+    color: #1B676B;
+    background-color: #EAFDE6;
+  }
+
+  &__headline {
+    padding: 0 0.25em;
+    background-color: #1B676B;
+  }
+
+  &__list {
+    font-size: 0.5em;
+    padding: 0 0.5em;
+    background-color: white;
+    color: #88C425;
+
+    a {
+      color: #88C425;
+      text-decoration: underline;
+      transition: all ease 0.2s;
+
+      &:hover {
+        color: #1B676B;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 0.5em;
+    padding: 0 0.5em 3em;
+    background-color: #EAFDE6;
+    color: #1B676B;
+
+    @include fullhd {
+      width: 70%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      transition: 0.2s ease all;
+
+      &:hover {
+        color: #88C425;
       }
     }
   }
