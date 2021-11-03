@@ -2236,6 +2236,52 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   font-family: "Arnord Italic";
   src: url("/font/Arnold_v0.3-Italic.woff2"); }
 
+#typecooker {
+  font-size: 16px;
+  background-color: #BEF202;
+  height: 100%;
+  font-family: "Koga Sans Modern", "TazuganeGothicStdN-Bold", sans-serif;
+  font-variation-settings: "wght" 600; }
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+    #typecooker {
+      font-size: 12px; } }
+  @media screen and (max-width: 768px) {
+    #typecooker {
+      font-size: 8px; } }
+  #typecooker .titles__title {
+    background-color: #1B676B;
+    font-size: 3.5em;
+    padding: 0.5em 0.25em 0.5em; }
+  #typecooker .titles__class {
+    font-size: 3.5em;
+    height: 100%;
+    display: flex; }
+    #typecooker .titles__class .tab {
+      box-sizing: border-box;
+      color: white;
+      background-color: #519548;
+      padding: 0.5em 0.25em 0.5em;
+      cursor: pointer; }
+      #typecooker .titles__class .tab.is-active {
+        background-color: white;
+        color: #88C425; }
+  #typecooker .challenge {
+    background-color: #EAFDE6;
+    display: none; }
+    #typecooker .challenge.is-show {
+      display: block; }
+    #typecooker .challenge__list {
+      color: #1B676B;
+      font-size: 3.5em;
+      margin-bottom: -1px; }
+      #typecooker .challenge__list--head {
+        background-color: #519548;
+        color: white;
+        height: 100%;
+        padding: 0.5em 0.25em;
+        margin-right: 0.25em;
+        display: inline-block; }
+
 * {
   box-sizing: border-box; }
 
@@ -2260,7 +2306,8 @@ html {
   background-color: var(--backgroundColor);
   font-size: var(--fz);
   line-height: var(--pitch);
-  transition: 0.2s ease; }
+  transition: 0.2s ease;
+  height: 100%; }
 
 ::selection {
   background: var(--accentColor);

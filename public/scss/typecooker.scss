@@ -1,0 +1,68 @@
+#typecooker {
+  font-size: 16px;
+  background-color: #BEF202;
+  height: 100%;
+  font-family: "Koga Sans Modern",
+    "TazuganeGothicStdN-Bold",
+    sans-serif;
+  font-variation-settings: 'wght'600;
+
+  @include tablet-only {
+    font-size: 12px;
+  }
+
+  @include mobile {
+    font-size: 8px;
+  }
+
+  .titles {
+    &__title {
+      background-color: #1B676B;
+      font-size: 3.5em;
+      padding: 0.5em 0.25em 0.5em;
+    }
+
+    &__class {
+      font-size: 3.5em;
+      height: 100%;
+      display: flex;
+
+      .tab {
+        box-sizing: border-box;
+        color: white;
+        background-color: #519548;
+        padding: 0.5em 0.25em 0.5em;
+        cursor: pointer;
+
+        &.is-active {
+          background-color: white;
+          color: #88C425;
+        }
+      }
+    }
+  }
+
+  .challenge {
+    background-color: #EAFDE6;
+    display: none;
+
+    &.is-show {
+      display: block;
+    }
+
+    &__list {
+      color: #1B676B;
+      font-size: 3.5em;
+      margin-bottom: -1px;
+
+      &--head {
+        background-color: #519548;
+        color: white;
+        height: 100%;
+        padding: 0.5em 0.25em;
+        margin-right: 0.25em;
+        display: inline-block;
+      }
+    }
+  }
+}

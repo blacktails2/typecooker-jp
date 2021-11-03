@@ -3,6 +3,7 @@
 @import "../../node_modules/bulma/sass/grid/columns";
 @import "../../node_modules/bulma/sass/base/_all";
 @import "fontface";
+@import "typecooker";
 
 $book: "Koga Sans Modern",
 "TazuganeGothicStdN-Book",
@@ -85,6 +86,7 @@ html {
   font-size: var(--fz);
   line-height: var(--pitch);
   transition: 0.2s ease;
+  height: 100%;
 }
 
 ::selection {
